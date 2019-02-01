@@ -1,0 +1,8 @@
+#!/bin/sh
+cd
+sudo ssh -i "ar-whiteboard.pem" ubuntu@ec2-35-178-8-185.eu-west-2.compute.amazonaws.com <<EOF
+    cd ar-whiteboard-API/server/
+    git pull
+    pm2 restart all
+    exit
+EOF
